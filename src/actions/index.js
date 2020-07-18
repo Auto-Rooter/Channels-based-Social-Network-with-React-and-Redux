@@ -1,6 +1,5 @@
-// Well be responsible for determinig what type of change we want to make to our global state 
-// within our types file we`ll create our first type to be 
-
+//  after creating and exporting the first type we use it here firstly in index.js
+//  
 import * as actionTypes from './types';
 
 export const setUser = user => {
