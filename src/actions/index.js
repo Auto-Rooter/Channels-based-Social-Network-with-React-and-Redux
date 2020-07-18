@@ -14,3 +14,10 @@ export const setUser = user => {
 // in order to actually perform the change to state of setting the user are 
 // going to create a functions  called reduces and they will do that within this reducers
 // folder and create just an index that just file
+
+
+export const clearUser = () => {
+    return {
+        type: actionTypes.CLEAR_USER
+    }
+}

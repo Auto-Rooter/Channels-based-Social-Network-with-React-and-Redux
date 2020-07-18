@@ -15,7 +15,7 @@ import { Provider, connect } from 'react-redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import {BrowserRouter as Router, Switch, Route, withRouter} from 'react-router-dom';
 import rootReducer from './reducers';
-import { setUser } from './actions';
+import { setUser, clearUser } from './actions';
 
 // create the global state that store the value from createstore function  
 // the rootReducer will get entire state object
@@ -30,6 +30,9 @@ class Root extends React.Component{
                 // console.log(user);
                 this.props.setUser(user);
                 this.props.history.push('/');
+            }else{
+                this.props.history.push("/login");
+                this.props.clearUser();// From global state
             }
         }); 
     } 
@@ -65,7 +68,7 @@ const mapStateFromProps = state => ({
 });
 
 const RootWithAuth = withRouter(
-    connect(mapStateFromProps, {setUser})(Root)
+    connect(mapStateFromProps, {setUser, clearUser})(Root)
     );
 // to provide this global state and make it available to all our components , we use the 
 // <provider> component wrapping the router with it .

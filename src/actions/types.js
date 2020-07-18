@@ -2,3 +2,4 @@
 // within our types file we`ll create our first type to be 
 
 export const SET_USER = 'SET_USER';
+export const CLEAR_USER = "CLEAR_USER";
