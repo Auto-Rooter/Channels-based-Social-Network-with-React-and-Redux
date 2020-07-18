@@ -8,13 +8,21 @@ import MetaPanel from './MetaPanel/MetaPanel';
 
 
 // stateless function copononet 
+// semantic UI use a 16 point grid system 
 
 const App = () => (
-  <Grid>
+  <Grid columns="equal" className="app" style={{ background: "#eee" }}>
     <ColorPanel />
     <SidePanel />
-    <Messages />
-    <MetaPanel />
+
+    <Grid.Column style={{ marginLeft: 320 }}>
+      <Messages />
+    </Grid.Column>
+
+    <Grid.Column width={4}>
+      <MetaPanel />
+    </Grid.Column>
+
   </Grid>
 )
 
